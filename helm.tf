@@ -7,6 +7,11 @@ resource "helm_release" "spot_termination_handler" {
   version    = var.helm_chart_version
   namespace  = var.namespace
 
+  set {
+    name = "image.repository"
+    value = var.image_repository
+  }
+
   values = [
     yamlencode(var.settings)
   ]

@@ -49,3 +49,9 @@ variable "settings" {
   default     = {}
   description = "Additional settings which will be passed to the Helm chart values."
 }
+
+variable "image_repository" {
+  type = string
+  default = "602401143452.dkr.ecr.us-west-2.amazonaws.com/amazon/aws-load-balancer-controller"
+  description = "The image repo to pull the containers from"
+}
